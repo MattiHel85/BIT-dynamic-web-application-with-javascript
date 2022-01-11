@@ -1,9 +1,5 @@
-console.log("Welcome to the course!");
-
-// function myFunction() {
-//     alert("Sivu ladattu onnistuneesti!");
-// }
-
+document.write("<h1>Dynamic Web Applications with Javascript </h1>");
+document.write("<br>");
 // Answers
 // 1. JS Output and console
     // alert("Hello World!");
@@ -11,75 +7,92 @@ console.log("Welcome to the course!");
 // 2. Defining variables
 //     var/let/const
 
-    // let firstName = "Matt";
-    // let lastName = "Simpson";
+let firstName = "Matt";
+let lastName = "Simpson";
 
-    // document.write("<p>" + firstName + " " + lastName + "</p>" )
-    // console.log(firstName + " " + lastName);
+document.write("<strong>" + firstName + " " + lastName + "</strong>" )
+document.write("<hr>");
+console.log(firstName + " " + lastName);
 
 // 3. Conditionals
-    // let x = 17;
-    // let order = "Beer";
+document.write("<h2>Checking ID</h2>");
+document.write("<p>The if statement used an X variable with the value of 17 to represent age.<br>Since 17 is too young to drink, the statement returned the following. . .</p>");
 
-    // if (x > 50) {
-    //     document.write("<h1>He's over 50!</h1>");
-    // } else if (x <= 50 && x > 30) {
-    //     document.write("<strong>Middle aged man, who ordered some " + order.toLowerCase() + ".</strong>");
-    // } else if (x <=30 && x > 20) {
-    //     document.write("<strong>You're too young to drink " + order.toLowerCase() + " in my pub!</strong>");
-    // } else if (x <= 20 && x > 17) {
-    //     document.write("<strong>You think you're getting some " + order.toLowerCase() + "? Do one!</strong>");
-    // } else
-    // document.write("<strong>GET OUT YOU WEE BAIRN!!! YOU CAN GET SOME " + order.toUpperCase() + " FROM YOUR MAMMYS ALCOHOL CABINET!!!</strong>");
+let x = 17;
+let order = "Beer";
 
+if (x > 50) {
+    document.write("<h1>He's over 50!</h1>");
+} else if (x <= 50 && x > 30) {
+    document.write("<strong>Middle aged man, who ordered some " + order.toLowerCase() + ".</strong>");
+} else if (x <=30 && x > 20) {
+    document.write("<strong>You're too young to drink " + order.toLowerCase() + " in my pub!</strong>");
+} else if (x <= 20 && x > 17) {
+    document.write("<strong>You think you're getting some " + order.toLowerCase() + "? Do one!</strong>");
+} else
+document.write("<strong>GET OUT YOU WEE BAIRN!!! YOU CAN GET SOME " + order.toUpperCase() + " FROM YOUR MAMMYS ALCOHOL CABINET!!!</strong>");
+
+document.write("<hr>");
 // 4. Loops
 
     // This is not correct.
+document.write("<h2>Loops</h2><ol>");
+var arr = [];
 
-    // var arr = [];
+for (var i=0; i<15; i++) {
+    arr.push(Math.floor(Math.random() * 100 ) + 1 );
+    document.write("<li>" + arr[i]+ "</li>");
+}
 
-    // for (var i=1; i<100; i++) {
-    //     arr.push(Math.floor(Math.random() * i ) );
-    //     document.write("<p>" + arr[i -1]+ "</p>");
-    // }
+document.write("</ol>");
+document.write("<hr>");
 
 // 5. Functions walkthrough
-    // function areYouOldEnough(age) {
-    //     if(age < 18) {
-    //         console.log("Sorry, you're not old enough yet");
-    //         return false;
-    //     } else
-    //     console.log(true);
-    //     alert("You're of age!");
-    //     return true;
-    // }
+document.write("<h2>Function</h2>")
+document.write("<p>This function takes an argument named age and depending on whether you or younger than or older than 18, returns a different response.<br>I called the function with the age</p>")
+function areYouOldEnough(age) {
+    if(age < 18) {
+        // console.log("Sorry, you're not old enough yet");
+        document.write("<strong>Sorry, you're not old enough yet</strong>");
+        return false;
+    } else
+    console.log(true);
+    document.write("<strong>You're of age!</strong>");
+    return true;
+}
 
+areYouOldEnough(18);
+
+document.write("<hr>")
 
 // 6. Objects
 
-// var personArray = [
-//     personOne = {
-//         firstName: "Dave",
-//         lastName: "England"
-//     },
-//     personTwo = {
-//         firstName: "Stephen",
-//         lastName: "Wales"
-//     },
-//     personThree = {
-//         firstName: "Terry",
-//         lastName: "Scotland"
-//     },
-//     personFour = {
-//         firstName: "Brian",
-//         lastName: "Ireland"
-//     }
-// ]
+document.write("<h2>Objects</h2>")
+document.write("<p>I created an object made up of the first and last names of four men. I then looped through the object to write the following to the DOM.</p>")
 
-// for (let i in personArray) {
-//     console.log(personArray[i].firstName + " " + personArray[i].lastName)
-// }
-
+var personArray = [
+    personOne = {
+        firstName: "Dave",
+        lastName: "England"
+    },
+    personTwo = {
+        firstName: "Stephen",
+        lastName: "Wales"
+    },
+    personThree = {
+        firstName: "Terry",
+        lastName: "Scotland"
+    },
+    personFour = {
+        firstName: "Brian",
+        lastName: "Ireland"
+    }
+]
+document.write("<ul>")
+for (let i in personArray) {
+    document.write("<li>" + personArray[i].firstName + " " + personArray[i].lastName + "</li>")
+}
+document.write("</ul>")
 // Independent exercises 1
 
 // 1. Dogs age
